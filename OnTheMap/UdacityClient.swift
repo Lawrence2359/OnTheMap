@@ -69,14 +69,14 @@ class UdacityClient: NSObject {
                 } else {
                     print("Your request returned an invalid response!")
                 }
-                completionHandler(result: nil, error: nil)
+                completionHandler(result: nil, error: NSError(domain: "taskForGETMethod parsing", code: 0, userInfo: [NSLocalizedDescriptionKey: "Something went wrong, please try again."]))
                 return
             }
             
             /* GUARD: Was there any data returned? */
             guard let data = data else {
                 print("No data was returned by the request!")
-                completionHandler(result: nil, error: nil)
+                completionHandler(result: nil, error: NSError(domain: "taskForGETMethod parsing", code: 0, userInfo: [NSLocalizedDescriptionKey: "Something went wrong, please try again."]))
                 return
             }
             
@@ -125,14 +125,14 @@ class UdacityClient: NSObject {
                 } else {
                     print("Your request returned an invalid response!")
                 }
-                completionHandler(result: nil, error: nil)
+                completionHandler(result: nil, error: NSError(domain: "taskForPOSTMethod parsing", code: 0, userInfo: [NSLocalizedDescriptionKey: "Something went wrong, please try again."]))
                 return
             }
             
             /* GUARD: Was there any data returned? */
             guard let data = data else {
                 print("No data was returned by the request!")
-                completionHandler(result: nil, error: nil)
+                completionHandler(result: nil, error: NSError(domain: "taskForPOSTMethod parsing", code: 0, userInfo: [NSLocalizedDescriptionKey: "Something went wrong, please try again."]))
                 return
             }
             
@@ -181,14 +181,14 @@ class UdacityClient: NSObject {
                 } else {
                     print("Your request returned an invalid response!")
                 }
-                completionHandler(result: nil, error: NSError(domain: "taskForFBPOSTMethod", code: 1, userInfo: [NSLocalizedDescriptionKey: "error status code"]))
+                completionHandler(result: nil, error: NSError(domain: "taskForFBPOSTMethod parsing", code: 1, userInfo: [NSLocalizedDescriptionKey: "error status code"]))
                 return
             }
             
             /* GUARD: Was there any data returned? */
             guard let data = data else {
                 print("No data was returned by the request!")
-                completionHandler(result: nil, error: nil)
+                completionHandler(result: nil, error: NSError(domain: "taskForFBPOSTMethod parsing", code: 0, userInfo: [NSLocalizedDescriptionKey: "Something went wrong, please try again."]))
                 return
             }
             
@@ -240,14 +240,14 @@ class UdacityClient: NSObject {
                 } else {
                     print("Your request returned an invalid response!")
                 }
-                completionHandler(result: nil, error: nil)
+                completionHandler(result: nil, error: NSError(domain: "taskForDELETEMethod parsing", code: 0, userInfo: [NSLocalizedDescriptionKey: "Something went wrong, please try again."]))
                 return
             }
             
             /* GUARD: Was there any data returned? */
             guard let data = data else {
                 print("No data was returned by the request!")
-                completionHandler(result: nil, error: nil)
+                completionHandler(result: nil, error: NSError(domain: "taskForDELETEMethod parsing", code: 0, userInfo: [NSLocalizedDescriptionKey: "Something went wrong, please try again."]))
                 return
             }
             

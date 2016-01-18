@@ -78,8 +78,8 @@ class ListTableViewController: UIViewController, UITableViewDelegate {
             self.hideLoadingView()
             if result!["id"] != nil {
                 if UdacityClient.sharedInstance().loginType == UdacityLoginType.Facebook {
-                    FBSDKAccessToken.setCurrentAccessToken(nil)
-                    FBSDKProfile.setCurrentProfile(nil)
+                    let fbLoginManager = FBSDKLoginManager()
+                    fbLoginManager.logOut()
                 }
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self.dismissViewControllerAnimated(true, completion: nil)

@@ -63,6 +63,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                                 self.presentViewController(UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainTabController"), animated: true, completion: nil)
                             })
+                        }else{
+                            let alert = UIAlertController.init(title: nil, message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
+                            let cancelAction: UIAlertAction = UIAlertAction(title: "Ok", style: .Cancel) { action -> Void in
+                            }
+                            alert.addAction(cancelAction)
+                            self.presentViewController(alert, animated: true, completion:nil)
                         }
                     }
                     
